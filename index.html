@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 40px;
+      color: #fff;
+      text-shadow: 2px 2px #ff69b4;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    video {
+      max-width: 90%;
+      width: 600px;
+      margin-top: 20px;
+      border: 8px solid #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 24px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #fff8dc;
+      text-shadow: 1px 1px #d63384;
+    }
+
+    .balloons {
+      font-size: 2rem;
+      margin-top: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="balloons">🎈🎉🎂🎈🎊🎁🎈</div>
+  <h1>🎉 Happy Birthday! 🎉</h1>
+
+  <div class="container">
+    <!-- ✅ Replace this video link with your own if needed -->
+    <video controls autoplay muted loop>
+      <source src="Birthday Girl.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <button onclick="changeMessage()">Click Me!</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function changeMessage() {
+      const messages = [
+        "🎂 Wishing you joy, love, and cake!",
+        "🎉 You’re one in a million!",
+        "🥳 Time to celebrate YOU!",
+        "🎁 May all your wishes come true!",
+        "💖 Shine bright, birthday star!"
+      ];
+      const random = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("message").innerText = random;
+    }
+  </script>
+
+</body>
+</html>
